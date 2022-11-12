@@ -9,7 +9,7 @@ Cosserat rod model can represent slender rods  with one dimensional representati
 
 ## Activation model using an octopus-like muscular structure
 To get closer to the robotic setup, the arm is coupled with an actuation model inspired by octopus musculature. For 2d motion, it’s sufficient to consider the transverse muscles that allow the arm to extend and the longitudinal muscles that allow the arm to bend. We define the muscle activation to be continuous along the arm and has value between 0 to 1. Based on the muscles’ offset to the centerline, the activation directly maps to the forces and the couples on the Cosserat rod.
-[image:BC0716E7-EE99-4052-9952-256C5001A5FC-64869-0000D451EF0D90F5/muscle_model.gif]
+[image:muscle_model.gif]
 
 
 ## Energy shaping control
