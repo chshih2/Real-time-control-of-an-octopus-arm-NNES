@@ -37,6 +37,9 @@ I implement ES with 100, 1000, and 10000 maximum number of iterations. While the
 ![NNESperformance.jpeg](NNESperformance.jpeg)
 
 [1] Chang, H.-S., Halder, U., Shih, C.-H., Naughton, N., Gazzola, M., & Mehta, P. G. (2022). Energy Shaping Control of a Muscular Octopus Arm Moving in Three Dimensions. arXiv preprint arXiv:2209.04089.
+
 [2] Chang, H.-S., Halder, U., Gribkova, E., Tekinalp, A., Naughton, N., Gazzola, M., & Mehta, P. G. (2021, December). Controlling a cyberoctopus soft arm with muscle-like actuation. In 2021 60th IEEE Conference on Decision and Control (CDC) (pp. 1383-1390). IEEE.
+
 [3] Chang, H.-S., Halder, U., Shih, C.-H., Tekinalp, A., Parthasarathy, T., Gribkova, E., ... & Mehta, P. G. (2020, December). Energy shaping control of a cyberoctopus soft arm. In 2020 59th IEEE Conference on Decision and Control (CDC) (pp. 3913-3920). IEEE.
+
 [4] Shih, C.-H., Naughton, N., Halder, U., ... & Gazzola, M. (2022) Hierarchical control and learning of a foraging CyberOctopus.
