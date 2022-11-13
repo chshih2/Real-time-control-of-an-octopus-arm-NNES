@@ -36,6 +36,18 @@ I implement ES with 100, 1000, and 10000 maximum number of iterations. While the
 
 ![NNESperformance.jpeg](NNESperformance.jpeg)
 
+---
+
+## Compact representation for the continuous muscle activations
+To efficiently learn the mapping, I construct a a compact representation for the continuous activations. I consider 70 uniformly distributed food targets around the workspace, and for each, I use the iterative method to solve for the muscle activations. Given the three muscle groups LM1, LM2, and TM, total 210 activations are generated. I then perform Principal Component Analysis on these muscle activations for dimensionality reduction  Basically, PCA projects each data point onto only the first few principal components to obtain lower-dimensional data 
+And this can be done by picking the eigenvectors of the data matrix that correspond to the few biggest eigenvalues. 
+
+I select the first 11 principal components and plot them as a function of the arm length. Since the linear combination of these components forms a muscle activation, I consider these 11 eigenvectors as the basis functions for the muscle activation, and treat the 11 coefficients as the control variables.
+
+![PCA.jpeg](PCA.gif)
+
+---
+
 [1] Chang, H.-S., Halder, U., Shih, C.-H., Naughton, N., Gazzola, M., & Mehta, P. G. (2022). Energy Shaping Control of a Muscular Octopus Arm Moving in Three Dimensions. arXiv preprint arXiv:2209.04089.
 
 [2] Chang, H.-S., Halder, U., Gribkova, E., Tekinalp, A., Naughton, N., Gazzola, M., & Mehta, P. G. (2021, December). Controlling a cyberoctopus soft arm with muscle-like actuation. In 2021 60th IEEE Conference on Decision and Control (CDC) (pp. 1383-1390). IEEE.
