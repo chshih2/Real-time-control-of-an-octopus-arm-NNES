@@ -44,7 +44,14 @@ And this can be done by picking the eigenvectors of the data matrix that corresp
 
 I select the first 11 principal components and plot them as a function of the arm length. Since the linear combination of these components forms a muscle activation, I consider these 11 eigenvectors as the basis functions for the muscle activation, and treat the 11 coefficients as the control variables.
 
-![PCA.jpeg](PCA.gif)
+![PCA.gif](PCA.gif)
+
+---
+
+## Reaching a target in the presence of a solid obstacle
+NN-ES is fast and accurate in reaching targets, but what if there is an obstacle? Given this dynamic controller is driven by static activations, the arm can get stuck if the obstacle is on the way. So without further burdening control or training, I implement a simple sensory feedback law — when the arm touches an obstacle, two signals emanate from the point of contact in each direction. One signal goes toward the arm’s tip for muscle relaxation, the other signal travels toward the arm’s base, and triggers the arm to bend. Once contact ceases, the arm returns to executing the original muscle activations. This law together with the compliant nature of the arm, allow the arm to slip past the obstacle with minimal computational effort. 
+
+![stacle.gif](obstacle.gif)
 
 ---
 
