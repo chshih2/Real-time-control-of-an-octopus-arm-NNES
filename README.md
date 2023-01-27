@@ -1,7 +1,23 @@
 # Real-time-control-of-an-octopus-arm-NNES
+
 One of the robotic analogies of an octopus arm is soft continuum manipulators. Given their potential to perform complex tasks in unstructured environments as well as to operate safely around humans, with applications ranging from agriculture to surgery, there are various proof-of-concept soft continuum manipulators with distinct designs, mechanisms and actuations. However, current studies overwhelmingly employ simplified models like constant curvature approximations or steady-state assumptions, which do not fully exploit soft material properties like high nonlinearity and inherent compliancy.
 
 In this project, I obtain a real-time controller for a soft arm to reach random targets in its workspace. The control approach is not only tailored to the distributed and compliant mechanical system, but also fast enough for real-time applications, learning purposes, and scaling up to multi-arm systems.
+
+## Code
+
+### dependencies
+```angular2html
+pip install -r requirements.txt
+```
+
+### Compact representation
+```angular2html
+python pca_activation.py
+```
+- Data can be downloaded [here](https://uofi.box.com/s/0zdfx7c0m9khmuwdid44cgwczy6exquv)
+  - Input: ES_data/ 
+  - Output: activation.npz
 
 
 ## Model an octopus arm as a Cosserat rod.
@@ -39,7 +55,7 @@ I implement ES with 100, 1000, and 10000 maximum number of iterations. While the
 ---
 
 ## Compact representation for the continuous muscle activations
-To efficiently learn the mapping, I construct a a compact representation for the continuous activations. I consider 70 uniformly distributed food targets around the workspace, and for each, I use the iterative method to solve for the muscle activations. Given the three muscle groups LM1, LM2, and TM, total 210 activations are generated. I then perform Principal Component Analysis on these muscle activations for dimensionality reduction  Basically, PCA projects each data point onto only the first few principal components to obtain lower-dimensional data
+To efficiently learn the mapping, I construct a compact representation for the continuous activations. I consider 70 uniformly distributed food targets around the workspace, and for each, I use the iterative method to solve for the muscle activations. Given the three muscle groups LM1, LM2, and TM, total 210 activations are generated. I then perform Principal Component Analysis on these muscle activations for dimensionality reduction  Basically, PCA projects each data point onto only the first few principal components to obtain lower-dimensional data
 And this can be done by picking the eigenvectors of the data matrix that correspond to the few biggest eigenvalues.
 
 I select the first 11 principal components and plot them as a function of the arm length. Since the linear combination of these components forms a muscle activation, I consider these 11 eigenvectors as the basis functions for the muscle activation, and treat the 11 coefficients as the control variables.
